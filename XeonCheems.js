@@ -91,10 +91,10 @@ var d = Math.floor(seconds / (3600 * 24));
 var h = Math.floor((seconds % (3600 * 24)) / 3600);
 var m = Math.floor((seconds % 3600) / 60);
 var s = Math.floor(seconds % 60);
-var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " Day, ") : "";
-var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " Hour, ") : "";
-var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " Minute, ") : "";
-var sDisplay = s > 0 ? s + (s == 1 ? " second" : " Second") : "";
+var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " Dia, ") : "";
+var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " Hora, ") : "";
+var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " Minuto, ") : "";
+var sDisplay = s > 0 ? s + (s == 1 ? " second" : " Segundos") : "";
 return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 	
@@ -147,17 +147,17 @@ try {
 	
 //[level(incomplete, still in devment)]\\
 const levelRole = getLevelingLevel(m.sender)
-	  var role = 'bronz'
+	  var role = 'bronce'
 	  if (levelRole <= 3) {
-	role = 'Copper'
+	role = 'Cobre'
 	  } else if (levelRole <= 5) {
-	role = 'Iron'
+	role = 'Hierro'
 	  } else if (levelRole <= 7) {
-	role = 'Silver'
+	role = 'Plata'
 	  } else if (levelRole <= 10) {
-	role = 'Gold'
+	role = 'Oro'
 	  } else if (levelRole <= 12) {
-	role = 'Platinum'
+	role = 'Platino'
 	  } else if (levelRole <= 15) {
 	role = 'Mithril'
 	  } else if (levelRole <= 18) {
@@ -172,21 +172,21 @@ const levelRole = getLevelingLevel(m.sender)
 	if (isAntiLink) 
 if (budy.includes('https://chat.whatsapp.com/')) {
                if (!m.key.fromMe) {
-               reply('*LINK DETECTED*\nWow, how naughty, this group has been installed with Antilink, OK?..,\nGood Bye To You..👋🏻')
+               reply('*LINK DETECTED*\nESTA ACTIVO EL ANTILINK SERAS ELIMINADO..,\nGood Bye To You..👋🏻')
                let sianj = m.sender
                await XeonBotInc.groupParticipantsUpdate(m.chat, [sianj], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                }
 	  }
 	if (db.chats[m.chat].wame) {
         if (budy.match(`wa.me/`)) {
-        m.reply(`「 WA.ME DETECTED 」\n\nYou have been detected sending a wa.me link, sorry you will be kicked !`)
-          if (!isBotAdmins) return m.reply(`Bot must be admin first`)
+        m.reply(`「 WA.ME DETECTED 」\n\nSe te ha detectado enviando un enlace wa.me, lo sentimos, ¡serás expulsado!`)
+          if (!isBotAdmins) return m.reply(`El bot debe ser administrador primero`)
         let gclink = (`https://wa.me/`)
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return m.reply(`Eh sorry it didn't happen, because you sent this wa.me link`)
-        if (isAdmins) return m.reply(`Ehh sorry you admin`)
-        if (isCreator) return m.reply(`Ehh sorry you are the owner of me`)
+        if (isgclink) return m.reply(`Eh, lo siento, no sucedió, porque enviaste este enlace wa.me`)
+        if (isAdmins) return m.reply(`Ehh lo siento administrador`)
+        if (isCreator) return m.reply(`Ehh lo siento eres el dueño de mi`)
         XeonBotInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -205,7 +205,7 @@ if (budy.includes('https://chat.whatsapp.com/')) {
             let user = Object.keys(global.db.users)
             let limitUser = isPremium ? global.limitawal.premium : global.limitawal.free
             for (let jid of user) global.db.users[jid].limit = limitUser
-            console.log('Reseted Limit')
+            console.log('Límite reiniciado')
         }, {
             scheduled: true,
             timezone: "Asia/Kolkata"
@@ -408,17 +408,17 @@ Type *give up* to surrender and admit defeat`
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    XeonBotInc.sendText(m.chat, `Suit has been sent to chat
+	    XeonBotInc.sendText(m.chat, `El juego ha comenzado jugadores:
 
-@${roof.p.split`@`[0]} and 
+@${roof.p.split`@`[0]}  
 @${roof.p2.split`@`[0]}
 
-Please choose a suit in the respective chat"
+Por favor elige una opcion en el chat respectivo"
 click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) XeonBotInc.sendText(roof.p, `Please select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
-	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, `Please select \n\nRock🗿\nPaper📄\nScissor✂️`, m)
+	    if (!roof.pilih) XeonBotInc.sendText(roof.p, `Please select \n\nPiedra🗿\nPapel📄\nTijera✂️`, m)
+	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, `Please select \n\nPiedra🗿\nPapel📄\nTijera✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) XeonBotInc.sendText(m.chat, `Both players don't want to play,\nSuit canceled`)
+	    if (!roof.pilih && !roof.pilih2) XeonBotInc.sendText(m.chat, `Ambos jugadores no quieren jugar,\nJuego cancelado`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
 	    XeonBotInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} didn't choose suit, game over`, m)
@@ -429,21 +429,21 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    }
 	    let jwb = m.sender == roof.p
 	    let jwb2 = m.sender == roof.p2
-	    let g = /scissors/i
-	    let b = /rock/i
-	    let k = /paper/i
+	    let g = /tijera/i
+	    let b = /piedra/i
+	    let k = /papel/i
 	    let reg = /^(scissors|rock|paper)/i
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
-	    reply(`You have chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
-	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, '_The opponent has chosen_\nNow it is your turn', 0)
+	    reply(`Has elegido ${m.text} ${!roof.pilih2 ? `\n\nEsperando a que tu oponente elija` : ''}`)
+	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, '_El oponente ha elegido_\nAhora es tu turno', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
-	    reply(`You have chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
-	    if (!roof.pilih) XeonBotInc.sendText(roof.p, '_The opponent has chosen_\nNow it is your turn', 0)
+	    reply(`Has elegido ${m.text} ${!roof.pilih ? `\n\nEsperando a que tu oponente elija` : ''}`)
+	    if (!roof.pilih) XeonBotInc.sendText(roof.p, 'El oponente ha elegido_\nAhora es tu turno', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -456,10 +456,10 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    XeonBotInc.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    XeonBotInc.sendText(roof.asal, `_*Resultados*_${tie ? '\nSERIES' : ''}
 
-@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
-@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost \n`}
+@${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` gana \n` : ` pierde \n`}
+@${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` gana \n` : ` pierde \n`}
 `.trim(), m, { mentions: [roof.p, roof.p2] })
 	    delete this.suit[roof.id]
 	    }
@@ -753,7 +753,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
-            let jawab = `👫Your match is
+            let jawab = `👫tu pareja es
 
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
@@ -769,7 +769,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
             let jawab = `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
-Ciee Whats Going On💖👀`
+ciee que esta pasando💖👀`
             let menst = [orang, jodoh]
             let buttons = [
                         { buttonId: '❤️congrats', buttonText: { displayText: '❤️congrats' }, type: 1 }
@@ -779,8 +779,8 @@ Ciee Whats Going On💖👀`
             break
             case 'join': {
                 if (!isCreator) throw mess.owner
-                if (!text) throw 'Enter the group link!'
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
+                if (!text) throw 'Introduce el enlace del grupo!'
+                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalido!'
                 replay(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
                 await XeonBotInc.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
@@ -925,16 +925,16 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
             devote = vote[m.chat][2]
             teks_vote = `*「 VOTE 」*
 
-*Reason:* ${vote[m.chat][0]}
+*Motivo:* ${vote[m.chat][0]}
 
-┌〔 UPVOTE 〕
+┌〔 Afavor 〕
  
 ├ Total: ${vote[m.chat][1].length}
 
  
 └────
 
-┌〔 DEVOTE 〕
+┌〔 Encontra 〕
  
 ├ Total: ${vote[m.chat][2].length}
 
@@ -943,8 +943,8 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
 
 *${prefix}deletevote* - to delete votes`
 let buttonsVote = [
-  {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Up-Vote👍🏻'}, type: 1},
-  {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻De-Vote👎🏻'}, type: 1}
+  {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Voto a favor👍🏻'}, type: 1},
+  {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto en contra👎🏻'}, type: 1}
 ]
 
             let buttonMessageVote = {
@@ -984,8 +984,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
 *${prefix}hapusvote* - to delete votes`
             let buttonsUpvote = [
-              {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Up-Vote👍🏻'}, type: 1},
-              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻De-Vote👎🏻'}, type: 1}
+              {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Voto a favor👍🏻'}, type: 1},
+              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto en contra👎🏻'}, type: 1}
             ]
 
             let buttonMessageUpvote = {
@@ -1026,8 +1026,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 
 *${prefix}hapusvote* - to delete votes`
             let buttonsDevote = [
-              {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Up-Vote👍🏻'}, type: 1},
-              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻De-Vote👎🏻'}, type: 1}
+              {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Voto a favor👍🏻'}, type: 1},
+              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto en contra👎🏻'}, type: 1}
             ]
 
             let buttonMessageDevote = {
@@ -1076,7 +1076,7 @@ break
             reply('Successfully Deleted Vote Session In This Group')
 	    }
             break
-               case 'group': case 'grup': {
+               case 'group': case 'grupo': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
@@ -1086,8 +1086,8 @@ break
                     await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => reply(`Successful Opening The Group`)).catch((err) => reply(jsonformat(err)))
                 } else {
                 let buttons = [
-                        { buttonId: 'group open', buttonText: { displayText: '⭕Open⭕' }, type: 1 },
-                        { buttonId: 'group close', buttonText: { displayText: '🚫Close🚫' }, type: 1 }
+                        { buttonId: 'group open', buttonText: { displayText: '⭕Abrir⭕' }, type: 1 },
+                        { buttonId: 'group close', buttonText: { displayText: '🚫Cerrar🚫' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, `Group Mode`, XeonBotInc.user.name, m)
 
@@ -1104,8 +1104,8 @@ break
                 await XeonBotInc.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Close Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else {
              let buttons = [
-                        { buttonId: 'editinfo open', buttonText: { displayText: '⭕Open⭕' }, type: 1 },
-                        { buttonId: 'editinfo close', buttonText: { displayText: '🚫Close🚫' }, type: 1 }
+                        { buttonId: 'editinfo open', buttonText: { displayText: '⭕Abrir⭕' }, type: 1 },
+                        { buttonId: 'editinfo close', buttonText: { displayText: '🚫Cerrar🚫' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, `Mode Edit Info`, XeonBotInc.user.name, m)
 
@@ -1113,17 +1113,17 @@ break
             }
             break
 case 'antilink':
-	        if (!m.isGroup) return reply(`This feature only be used in group`)
+	        if (!m.isGroup) return reply(`Esta función solo se puede usar en grupo.`)
 			if (!isAdmins) return reply(`This feature could be used by admin only`)
 			if (!isBotAdmins) return reply(`Bot must be admin first`)
 					if (args[0] === 'on') {
-						if (isAntiLink) return reply('Already Activated')
+						if (isAntiLink) return reply('Ya activado')
 						antilink.push(m.chat)
 						fs.writeFileSync('./database/antilink.json', JSON.stringify(antilink))
-						reply('Successfully activated the antilink feature')
-						XeonBotInc.sendMessage(m.chat,  {text: `ALLERT!!! This group has been installed anti-link\nIf you violate then I will kick`})
+						reply('Se activó con éxito la función antienlace')
+						XeonBotInc.sendMessage(m.chat,  {text: `¡¡¡ALERTA!!! Este grupo ha activado el anti-enlace\nSi violas, te Botare`})
 					} else if (args[0] === 'off') {
-						if (!isAntiLink) return reply('already deactivated')
+						if (!isAntiLink) return reply('ya desactivado')
 						var ini = antilink.indexOf(m.chat)
 						antilink.splice(ini, 1)
 						fs.writeFileSync('./database/antilink.json', JSON.stringify(antilink))
@@ -1137,17 +1137,17 @@ case 'antilink':
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
-                if (db.chats[m.chat].wame) return m.reply(`Already Activated`)
+                if (db.chats[m.chat].wame) return m.reply(`Ya activado`)
                 db.chats[m.chat].wame = true
                 m.reply(`Anti Wa.me Activated!`)
                 } else if (args[0] === "off") {
-                if (!db.chats[m.chat].wame) return m.reply(`Already deactivated`)
+                if (!db.chats[m.chat].wame) return m.reply(`Ya desactivado`)
                 db.chats[m.chat].wame = false
-                m.reply(`Anti Wa.me is not activated!`)
+                m.reply(`¡Anti Wa.me no está activado!`)
                 } else {
                  let buttons = [
-                        { buttonId: 'antiwame on', buttonText: { displayText: '⭕On⭕' }, type: 1 },
-                        { buttonId: 'antiwame off', buttonText: { displayText: '❌Off❌' }, type: 1 }
+                        { buttonId: 'antiwame on', buttonText: { displayText: '⭕Activar⭕' }, type: 1 },
+                        { buttonId: 'antiwame off', buttonText: { displayText: '❌Desactivar❌' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, `Mode Anti Wa.me`, XeonBotInc.user.name, m)
                 }
@@ -1157,17 +1157,17 @@ case 'antilink':
                 if (!m.isGroup) throw mess.group
                 if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
-                if (db.chats[m.chat].mute) return reply(`Already activated`)
+                if (db.chats[m.chat].mute) return reply(`Ya activado`)
                 db.chats[m.chat].mute = true
-                reply(`${XeonBotInc.user.name} has been muted in this group !`)
+                reply(`${XeonBotInc.user.name} ha sido silenciado en este grupo!`)
                 } else if (args[0] === "off") {
-                if (!db.chats[m.chat].mute) return reply(`Already deactivated`)
+                if (!db.chats[m.chat].mute) return reply(`Ya desactivado`)
                 db.chats[m.chat].mute = false
-                reply(`${XeonBotInc.user.name} has been unmuted in this group!`)
+                reply(`${XeonBotInc.user.name} ha sido silenciado en este grupo!`)
                 } else {
                  let buttons = [
-                        { buttonId: 'mute on', buttonText: { displayText: '⭕On⭕' }, type: 1 },
-                        { buttonId: 'mute off', buttonText: { displayText: '❌Off❌' }, type: 1 }
+                        { buttonId: 'mute on', buttonText: { displayText: '⭕Activar⭕' }, type: 1 },
+                        { buttonId: 'mute off', buttonText: { displayText: '❌Desactivar❌' }, type: 1 }
                     ]
                     await XeonBotInc.sendButtonText(m.chat, buttons, `Mute Bot`, XeonBotInc.user.name, m)
                 }
@@ -1183,7 +1183,7 @@ case 'antilink':
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
-                if (!text) throw 'Enter the enable/disable value, For Example ${prefix}ephemeral enable'
+                if (!text) throw 'Ingrese el valor a habilitar/deshabilitar, por ejemplo ${prefix}ephemeral enable'
                 if (args[0] === 'enable') {
                     await XeonBotInc.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'disable') {
@@ -1194,17 +1194,17 @@ case 'antilink':
             case 'delete': case 'del': {
                 if (!m.quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) throw 'The message was not sent by a bot!'
+                if (!isBaileys) throw '¡El mensaje no fue enviado por un bot!'
                 XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
             case 'bcgc': case 'bcgroup': {
                 if (!isCreator) throw mess.owner
-                if (!text) throw `Where is the text?\n\nExample : ${prefix + command} hello guys, am back`
+                if (!text) throw `¿Dónde está el texto?\n\nEjemplo : ${prefix + command} hola chicos, estoy de vuelta`
                 let getGroups = await XeonBotInc.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
-                reply(`Send Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} second`)
+                reply(`Enviar difusión a ${anu.length} Chat grupal, hora de finalización ${anu.length * 1.5} segundos`)
                 for (let i of anu) {
                     await sleep(1500)
                     let btn = [{
@@ -1215,11 +1215,11 @@ case 'antilink':
                             }, {
                                 callButton: {
                                     displayText: 'Owner Number👤',
-                                    phoneNumber: '+91 690-9137-213'
+                                    phoneNumber: '+51 977 783 315'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '📶Bot Status📶',
+                                    displayText: '📶Estado del bot📶',
                                     id: 'ping'
                                 }
                             }, {
@@ -1933,12 +1933,12 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
 			caption: `
-⭔ Title : ${anu.title}
-⭔ Author : ${anu.author.name}
+⭔ Titulo : ${anu.title}
+⭔ Autor : ${anu.author.name}
 ⭔ Like : ${anu.like}
-⭔ Caption : ${anu.caption}
+⭔ Subtítulo : ${anu.caption}
 ⭔ Url : ${anu.media[0]}
-To download media, please click one of the buttons below or enter the ytmp3/ytmp4 command with the url above
+Para descargar medios, haga clic en uno de los botones a continuación o ingrese el comando ytmp3/ytmp4 con la URL de arriba
 `,
 			footer: XeonBotInc.user.name,
 			buttons,
@@ -1992,7 +1992,7 @@ Available formats : pdf, docx, pptx, xlsx`)
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
 
-Options available:
+Opciones disponibles:
 abu-daud
 1 - 4590
 ahmad
@@ -2305,13 +2305,13 @@ case 'sendkontak': case 'sendcontact': {
             case 'public': {
                 if (!isCreator) throw mess.owner
                 XeonBotInc.public = true
-                reply('Successfully Changed To Public Usage')
+                reply('Cambiado con éxito a uso público')
             }
             break
             case 'self': {
                 if (!isCreator) throw mess.owner
                 XeonBotInc.public = false
-                reply('Successfully Changed To Self Usage')
+                reply('Cambiado con éxito a uso propio')
             }
             break
             case 'ping': case 'botstatus': case 'statusbot': {
@@ -2345,15 +2345,15 @@ case 'sendkontak': case 'sendcontact': {
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+🚄 Velocidad de respuesta ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _milisegundos_\n\nTiempo de ejecución: ${runtime(process.uptime())}
 
-Info Server
+💻Imformacion del servidor💻
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
-NodeJS Memory Usaage
+Uso de memoria de NodeJS
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
 
-${cpus[0] ? `_Total CPU Usage_
+${cpus[0] ? `_Uso total de la CPU_
 ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
@@ -2371,12 +2371,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                     	if(!text) throw `Enter The Bug Example\n\n${command} Menu Error `
                     	XeonBotInc.sendMessage(`916909137213@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
-reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
+reply(`Informado con éxito al propietario\n\nPor favor, asegúrese de que el error sea válido. Si juega con esto, use esta función una y otra vez sin ningún motivo, ¡será bloqueado con seguridad!`)
                     }
                     break 
 case 'tes': case 'test': case 'alive': case 'bot': case 'robot': case 'cheems': case 'doge':{
-                anu = `Hi ${pushname}
-Cheems Bot With You Forever!! 🐶🤚`
+                anu = `Hola ${pushname}
+Cheems Bot contigo para siempre!! 🐶🤚`
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -2433,13 +2433,13 @@ How Are You? 😊
 
 ❏「 INFO BOT 」
 
-𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botnma}
-𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownernma}
-𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
-𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
-𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+𝐕𝐞𝐥𝐨𝐜𝐢𝐝𝐚𝐝 : ${latensie.toFixed(4)} miliseconds
+𝐓𝐢𝐞𝐦𝐨 𝐝𝐞 𝐀𝐜𝐭𝐢𝐯𝐢𝐝𝐚𝐝 : ${runtime(process.uptime())}
+𝐍𝐨𝐦𝐛𝐫𝐞 𝐝𝐞𝐥 𝐁𝐨𝐭 : ${global.botnma}
+𝐍𝐨𝐦𝐛𝐫𝐞 𝐝𝐞𝐥 𝐏𝐫𝐨𝐩𝐢𝐞𝐭𝐚𝐫𝐢𝐨 : ${global.ownernma}
+𝐍𝐮𝐦𝐞𝐫𝐨 𝐝𝐞𝐥 𝐏𝐫𝐨𝐩𝐢𝐞𝐭𝐚𝐫𝐢𝐨 : ${global.owner}
+𝗛𝗼𝘀𝘁 : ${os.hostname()}
+𝗣𝗹𝗮𝘁𝐚𝗳𝗼𝗿𝗺𝐚 : ${os.platform()}
 
 
 Please Select Button Below
@@ -2456,12 +2456,12 @@ Please Select Button Below
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '🍇All Menu🍇',
+                                    displayText: '🍇Todos los comandos🍇',
                                     id: `${prefix}allmenu`
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: '🍒List Menu🍒',
+                                    displayText: '🍒Lista del menu🍒',
                                     id: `${prefix}command`
                                 }
                                 }, {
@@ -2479,11 +2479,11 @@ break
 case 'command':{
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
-                    title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu\n\n`,
+                    title: `Hola ${pushname}`,
+                    description: `Por favor elige el menú\n\n`,
                     buttonText: "Menu",
                     footerText: "_Cheems Bot-MD_",
-                    listType: "SINGLE_SELECT",
+                    listType: "SELECCIÓNA UNA OPCION",
                     sections: [{
 								"title": "Group Features",
 								"rows": [
@@ -3123,7 +3123,7 @@ break
 break
   case 'allmenu': {
   	anu = `
-  *All Menu*
+  *Todo el menú*
   
   ꪶ🐕Group Menu🐕ꫂ
   ➙ ${prefix}grouplink
