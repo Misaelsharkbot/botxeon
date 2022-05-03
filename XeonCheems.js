@@ -2427,8 +2427,8 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                             hydratedContentText: anu,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./XeonMedia/cheemspic.jpg')},
-                            hydratedFooterText: `Hi 🤚 ${pushname}
-How Are You? 😊
+                            hydratedFooterText: `Hola 🤚 ${pushname}
+¿Cómo estás? 😊
 
 
 ❏「 INFO BOT 」
@@ -2442,7 +2442,7 @@ How Are You? 😊
 𝗣𝗹𝗮𝘁𝐚𝗳𝗼𝗿𝗺𝐚 : ${os.platform()}
 
 
-Please Select Button Below
+Seleccione un botón a continuación
 `,
                             hydratedButtons: [{
                                 urlButton: {
@@ -2485,11 +2485,11 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                     footerText: "_Cheems Bot-MD_",
                     listType: "SELECCIÓNA UNA OPCION",
                     sections: [{
-								"title": "Group Features",
+								"title": "Comandos de grupo",
 								"rows": [
 									{
-										"title": "Group Menu",
-										"description": "Displays The List Of Group Features",
+										"title": "Menú de grupo",
+										"description": "Muestra la lista de funciones de grupo",
 										"rowId": `${prefix}grupmenu`
 									}
 								]
@@ -2498,68 +2498,68 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "Bot Features",
 								"rows": [
 									{
-										"title": "All Menu",
-										"description": "Displays The List Of All The Features!",
+										"title": "Todo el menú",
+										"description": "Muestra la lista de todos los comandos!",
 										"rowId": `${prefix}allmenu`
 									},
 									{
-										"title": "Download Menu",
-										"description": "Displays The List Of Download Features",
+										"title": "Descargar Menú",
+										"description": "Muestra la lista de funciones de descarga",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
-										"title": "Search Menu",
-										"description": "Displays The List Of Searching Features",
+										"title": "Menú de búsqueda",
+										"description": "Muestra la lista de características de búsqueda",
 										"rowId": `${prefix}searchmenu`
 									},
 										{
-											"title": "Image Menu",
-										"description": "Displays The List Of Image Features",
+											"title": "Menú de imagen",
+										"description": "Muestra la lista de características de la imagen",
 										"rowId": `${prefix}imagemenu`
 										},
 										{
-											"title": "Fun Menu",
-										"description": "Displays The List Of Fun Features",
+											"title": "Menú divertido",
+										"description": "Muestra la lista de funciones divertidas",
 										"rowId": `${prefix}funmenu`
 										},
 										{
-											"title": "Convert Menu",
-										"description": "Displays The List Of Convert Features",
+											"title": "Menú Convertir",
+										"description": "Muestra la lista de funciones de conversión",
 										"rowId": `${prefix}convertmenu`
 										},
 										{
-										"title": "Miscellaneous Menu",
-										"description": "Displays The List Of Miscellaneous Features",
+										"title": "Menú misceláneo",
+										"description": "Muestra la lista de características varias",
 										"rowId": `${prefix}nocategorymenu`
 										},
 										{
-											"title": "Database Menu",
-										"description": "Displays The List Of Database Features",
+											"title": "Menú de base de datos",
+										"description": "Muestra la lista de características de la base de datos",
 										"rowId": `${prefix}databasemenu`
 										},
 										{
-											"title": "Voice Changer Menu",
-										"description": "Displays The List Of Voice Changing Features",
+											"title": "Menú de cambiador de voz",
+										"description": "Muestra la lista de funciones de cambio de voz",
 										"rowId": `${prefix}voicemenu`
 										}
 								]
 							},
 							{
-								"title": "Chat with fellow users",
+								"title": "Chatear con otros usuarios",
 								"rows": [
 									{
-										"title": "Anonymous Chat Menu",
-										"description": "Displays The List Of Anonymous Chat Features",
+										"title": "Menú de chat anónimo",
+										"description": "Muestra la lista de funciones de chat anónimo",
 										"rowId": `${prefix}anonymouschatmenu`
 									}
 								]
 							},
 							{
-								"title": "Group System",
+								"title": "sistema de grupo",
 								"rows": [
 									{
-										"title": "System Menu",
-										"description": "Displays The List Of Group System Features",
+										"title": "Menu del sistema",
+										"description": "Muestra la lista de características del sistema de grupo",
 										"rowId": `${prefix}sistemmenu`
 									}
 								]
@@ -2568,18 +2568,18 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "Owner",
 								"rows": [
 									{
-										"title": "Owner Menu",
-										"description": "Displays The List Of Owner Features",
+										"title": "Menú de propietario",
+										"description": "Muestra la lista de características del propietario",
 										"rowId": `${prefix}ownermenu`
 									}
 								]
 							},
 							{
-								"title": "Credit",
+								"title": "Creditos",
 								"rows": [
 									{
-										"title": "Thanks To",
-										"description": "Displays The List Of Credit Of The Bot !!",
+										"title": "Gracias a",
+										"description": "¡¡Muestra la lista de crédito del Bot!!",
 										"rowId": `${prefix}tqtt`
 									}
 								]
@@ -2593,7 +2593,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             break
 case 'grupmenu': {
 	            anu = `
-  *Group Menu*
+  *Menú de grupo*
   
   ➙ ${prefix}grouplink
   ➙ ${prefix}ephemeral [option]
@@ -2633,7 +2633,7 @@ case 'grupmenu': {
 break
 case 'downloadmenu': {
 	okemenu = `
-	*Downloader Menu*
+	*Menú de descargas*
   
   ➙ ${prefix}tiktoknowm [url]
   ➙ ${prefix}tiktokwm [url]
@@ -2675,7 +2675,7 @@ case 'downloadmenu': {
             break 
             case 'searchmenu': {
             	anu = `
-              *Search Menu*
+              *Menú de búsqueda*
   
   ➙ ${prefix}play [query]
   ➙ ${prefix}yts [query]
@@ -2712,7 +2712,7 @@ case 'downloadmenu': {
 break
 case 'randommenu': {
 	anu = `
-	*Random Menu*
+	*Menú aleatorio*
   
   ➙ ${prefix}coffee
   ➙ ${prefix}couplepp
@@ -2743,7 +2743,7 @@ case 'randommenu': {
 break
 case 'funmenu': {
 	anu = `
-	*Fun Menu*
+	*Menú divertido*
   
   ➙ ${prefix}couple
   ➙ ${prefix}mysoulmate
@@ -2775,7 +2775,7 @@ case 'funmenu': {
 break
 case 'voicemenu': {
 	anu = `
-	*Voice Changer Menu*
+	*Menú de cambiador de voz*
 	
   ➙ ${prefix}bass
   ➙ ${prefix}blown
@@ -2815,7 +2815,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 break
 case 'religionmenukdksoejdjj': {
 	anu = `
-	*Religion Menu*
+	*Menú Religión*
 	
      (Islamic)
   ➙ ${prefix}iqra
@@ -2849,7 +2849,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 break
 case 'horoscopemenukcodk': {
 	anu = `
-	*Horoscope Menu*
+	*Menú Horóscopo*
   
   ➙ ${prefix}hockeynumber
   ➙ ${prefix}dreammeaning
@@ -2907,7 +2907,7 @@ case 'horoscopemenukcodk': {
 break
 case 'convertmenu': {
 	anu = `
-	*Convert Menu*
+	*Menú Convertir*
   
   ➙ ${prefix}toimage
   ➙ ${prefix}removebg
@@ -2945,7 +2945,7 @@ case 'convertmenu': {
 break
 case 'nocategorymenu': {
 	anu = `
-	*Misc Menu*
+	*Menú misceláneo*
   
   ➙ ${prefix}ping
   ➙ ${prefix}owner
@@ -2985,7 +2985,7 @@ case 'nocategorymenu': {
 break
 case 'databasemenu': {
 	anu = `
-	*Database Menu*
+	*Menú de base de datos*
   
   ➙ ${prefix}setcmd
   ➙ ${prefix}listcmd
@@ -3022,7 +3022,7 @@ case 'databasemenu': {
 break
 case 'anonymouschatmenu': {
 	anu = `
-	*Anonymous Menu*
+	*Menú anónimo*
 	
   ➙ ${prefix}start ( Start Chat )
   ➙ ${prefix}next ( Next user )
@@ -3054,7 +3054,7 @@ case 'anonymouschatmenu': {
 break
 case 'sistemmenu': {
 	anu = `
-	*System Menu*
+	*Menu del sistema*
 	
   ➙ ${prefix}antilink On/Off
   ➙ ${prefix}mute On/Off
@@ -3086,7 +3086,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 break
   case 'ownermenu': {
   	anu = `
-  *Owner Menu*
+  *Menú de propietario*
   
   ➙ ${prefix}chat [option]
   ➙ ${prefix}join [link]
@@ -3138,7 +3138,7 @@ break
   ➙ ${prefix}promote @user
   ➙ ${prefix}demote @user
   
-  ꪶ🐕Download Menu🐕ꫂ
+  ꪶ🐕Descargar Menú🐕ꫂ
   ➙ ${prefix}tiktoknowm [url]
   ➙ ${prefix}tiktokwm [url]
   ➙ ${prefix}tiktokmp3 [url]
@@ -3153,7 +3153,7 @@ break
   ➙ ${prefix}getmusic [query]
   ➙ ${prefix}getvideo [query
   
-  ꪶ🐕Search Menu🐕ꫂ
+  ꪶ🐕Menú de búsqueda🐕ꫂ
   ➙ ${prefix}play [query]
   ➙ ${prefix}yts [query]
   ➙ ${prefix}google [query]
@@ -3163,16 +3163,16 @@ break
   ➙ ${prefix}wikimedia [query]
   ➙ ${prefix}ytsearch [query]
   
-  ꪶ🐕Random Menu🐕ꫂ
+  ꪶ🐕Menú aleatorio🐕ꫂ
   ➙ ${prefix}coffee
   ➙ ${prefix}couplepp
   
-  ꪶ🐕Fun Menu🐕ꫂ
+  ꪶ🐕Menú divertido🐕ꫂ
   ➙ ${prefix}couple
   ➙ ${prefix}mysoulmate
   ➙ ${prefix}math [mode]  
   
-  ꪶ🐕Voice Changer Menu🐕ꫂ
+  ꪶ🐕Menú de cambiador de voz🐕ꫂ
   ➙ ${prefix}bass
   ➙ ${prefix}blown
   ➙ ${prefix}deep
@@ -3185,7 +3185,7 @@ break
   ➙ ${prefix}slow
   ➙ ${prefix}squirrel
    
-  ꪶ🐕Convert Menu🐕ꫂ
+  ꪶ🐕Menú Convertir🐕ꫂ
   ➙ ${prefix}toimage
   ➙ ${prefix}removebg
   ➙ ${prefix}sticker
@@ -3196,7 +3196,7 @@ break
   ➙ ${prefix}ebinary
   ➙ ${prefix}dbinary
   
-  ꪶ🐕Misc Menu🐕ꫂ
+  ꪶ🐕Menu Variado🐕ꫂ
   ➙ ${prefix}ping
   ➙ ${prefix}owner
   ➙ ${prefix}donate
@@ -3209,7 +3209,7 @@ break
   ➙ ${prefix}listonline
   ➙ ${prefix}report (report bug to owner)
   
-  ꪶ🐕Database Menu🐕ꫂ
+  ꪶ🐕Menú de base de datos🐕ꫂ
   ➙ ${prefix}setcmd
   ➙ ${prefix}listcmd
   ➙ ${prefix}delcmd
@@ -3219,17 +3219,17 @@ break
   ➙ ${prefix}getmsg
   ➙ ${prefix}delmsg
   
-  ꪶ🐕Anonymous Menu🐕ꫂ
+  ꪶ🐕Menú anónimo🐕ꫂ
   ➙ ${prefix}start ( Start Chat )
   ➙ ${prefix}next ( Next user )
   ➙ ${prefix}stop ( stop Anonymous chat )
   
-  ꪶ🐕System Menu🐕ꫂ
+  ꪶ🐕Menu del sistema🐕ꫂ
   ➙ ${prefix}antilink On/Off
   ➙ ${prefix}mute On/Off
   ➙ ${prefix}antiwame On/Off
   
-  ꪶ🐕Owner Menu🐕ꫂ
+  ꪶ🐕Menú de propietario🐕ꫂ
   ➙ ${prefix}chat [option]
   ➙ ${prefix}join [link]
   ➙ ${prefix}leave
