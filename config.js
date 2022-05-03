@@ -22,25 +22,25 @@ global.APIKeys = {
 }
 
 //═══════[modification]════════\\
-global.owner = ['916909137213','6283839980451'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
-global.pemilik = ['916909137213'] //another owner number
-global.premium = ['916909137213'] //premium number
-global.pengguna = 'Xeon' //username
+global.owner = ['51977783315'] //owner number, u can put multiple owner number, within quotations and seperated by comma.
+global.pemilik = ['51935116539'] //another owner number
+global.premium = ['51935116539'] //premium number
+global.pengguna = 'Misael' //username
 global.botnma = 'Cheems Bot-MD' //bot name
-global.ownernma = '🦄Dream Guy Xeon' //owner name
-global.packname = 'Cheems Bot' //sticker package name
-global.author = 'By Dream Guy Xeon' //sticker author name
+global.ownernma = '😎MISAEL😎' //owner name
+global.packname = 'Sticker' //sticker package name
+global.author = '( ͡❛ ͜ʖ ͡❛)' //sticker author name
 global.sessionName = 'session' //session name
 global.prefa = ['#','!','/',''] //prefix
 global.sp = '⭔' //design
 global.mess = {
     success: 'Done ✓',
-    admin: 'This Feature Is Only For Admin!',
-    botAdmin: 'Bot Must Be Admin First!',
-    owner: 'This Feature Is Only For Owner',
-    group: 'Feature Used Only For Groups!',
-    private: 'Features Used Only For Private Chat!',
-    bot: 'This feature in only for the bot number',
+    admin: '*Eate comando solo puede ser utilizado por un admin!*',
+    botAdmin: 'El Bot debe ser admin para utilizar este comando',
+    owner: 'Este comando solo puede ser usado por owner',
+    group: 'Este comando solo se puede usar en gurpos!',
+    private: 'Este comando solo se utiliza en chat privado!',
+    bot: 'Este comando solo puede ser utilizado por el bot',
     wait: 'In process...',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
 }
