@@ -2488,100 +2488,150 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								"title": "Comandos de grupo",
 								"rows": [
 									{
-										"title": "Menú de grupo",
-										"description": "Muestra la lista de funciones de grupo",
-										"rowId": `${prefix}grupmenu`
-									}
-								]
-							},
-							{
-								"title": "Bot Features",
-								"rows": [
-									{
-										"title": "Todo el menú",
-										"description": "Muestra la lista de todos los comandos!",
-										"rowId": `${prefix}allmenu`
+										"title": "Link",
+										"description": "para pedir el link del grupo",
+										"rowId": `${prefix}grouplink`
+									},
+								        {
+										"title": "Setgrupopp",
+										"description": "para cambiar la foto del grupo",
+										"rowId": `${prefix}setgrouppp`
 									},
 									{
-										"title": "Descargar Menú",
-										"description": "Muestra la lista de funciones de descarga",
-										"rowId": `${prefix}downloadmenu`
+										"title": "Setnombre",
+										"description": "para cambiar el nombre del grupo",
+										"rowId": `${prefix}setname`
 									},
 									{
-										"title": "Menú de búsqueda",
-										"description": "Muestra la lista de características de búsqueda",
-										"rowId": `${prefix}searchmenu`
+										"title": "Grupo on/off",
+										"description": "Para abrir o cerrar el grupo",
+										"rowId": `${prefix}group`
 									},
 										{
-											"title": "Menú de imagen",
-										"description": "Muestra la lista de características de la imagen",
-										"rowId": `${prefix}imagemenu`
+											"title": "Editinfo",
+										"description": "Quin puede ediat la info del grupo",
+										"rowId": `${prefix}editinfo`
 										},
 										{
-											"title": "Menú divertido",
-										"description": "Muestra la lista de funciones divertidas",
-										"rowId": `${prefix}funmenu`
+											"title": "Grupoinfo",
+										"description": "Ver la imformacion sobre el grupo",
+										"rowId": `${prefix}groupinfo`
 										},
 										{
-											"title": "Menú Convertir",
-										"description": "Muestra la lista de funciones de conversión",
-										"rowId": `${prefix}convertmenu`
+											"title": "add",
+										"description": "Para agregar a unpa persona al grupo",
+										"rowId": `${prefix}add`
 										},
 										{
-										"title": "Menú misceláneo",
-										"description": "Muestra la lista de características varias",
+										"title": "kick",
+										"description": "para eliminar a alguien del grupo",
+										"rowId": `${prefix}kick`
+										},
+										{
+											"title": "Promover",
+										"description": "Para acender a un usuario a admin",
+										"rowId": `${prefix}promote`
+										},
+										{
+											"title": "Degradar",
+										"description": "Para degradar a un admin a participante",
+										"rowId": `${prefix}demote`
+										},
+								                {
+										"title": "Tiktok",
+										"description": "para descargar un video de tiktok",
+										"rowId": `${prefix}tiktok`
+									},
+								        {
+										"title": "Instagram",
+										"description": "Para descaragr aldo de instagram",
+										"rowId": `${prefix}instagram`
+									},
+									{
+										"title": "Play",
+										"description": "Para descargar un vido o musica de youtube",
+										"rowId": `${prefix}play`
+									},
+									{
+										"title": "Twitter",
+										"description": "Para descargar un video de twitter",
+										"rowId": `${prefix}twitter`
+									},
+									{
+										"title": "Ytmp4",
+										"description": "Para descargar un vidode youtube por medio de un URL",
+										"rowId": `${prefix}play`
+									},
+									{
+										"title": "Ytmp3",
+										"description": "Para descargar una musica de youtube por medio de un URL",
+										"rowId": `${prefix}play`
+									},
+									{
+										"title": "Google",
+										"description": "Para buscar algo en google",
+										"rowId": `${prefix}google`
+									},
+									{
+										"title": "imagen",
+										"description": "Para buscar una imagen en google",
+										"rowId": `${prefix}plimagen`
+									},
+									{
+										"title": "Pinterest",
+										"description": "Para buscar en pinterest",
+										"rowId": `${prefix}pinterest`
+									},
+									{
+										"title": "Wallpaper",
+										"description": "Para buscar una wallpaper en especifico",
+										"rowId": `${prefix}wallpaper`
+									},
+									{
+										"title": "Ytsearch",
+										"description": "Para buscar algo en youtube",
+										"rowId": `${prefix}ytsearch`
+									},
+									{
+										"title": "Wikimedia",
+										"description": "Para buscar algo en wikimedia",
+										"rowId": `${prefix}wikimedia`
+									},
+									{
+										"title": "Coffee",
+										"description": "Una imagen de una taza de cafe 🧐",
+										"rowId": `${prefix}coffee`
+									},
+									{
+										"title": "Parejapp",
+										"description": "Te dara fotos que puedes usar con tu pareja en whatsapp",
+										"rowId": `${prefix}couplepp`
+									},
+									{
+										"title": "Pareja2",
+										"description": "Te muestra cual es tu alma gemela",
+										"rowId": `${prefix}couple`
+									},
+									{
+										"title": "Pareja",
+										"description": "Te muestra cual es tu alma gemela",
+										"rowId": `${prefix}pareja`
+									},
+									{
+										"title": "math",
+										"description": "jugar juegos matematicos",
+										"rowId": `${prefix}math`
+									},
+									{
+										"title": "Menu de funciones",
+										"description": "Funiones",
 										"rowId": `${prefix}nocategorymenu`
-										},
-										{
-											"title": "Menú de base de datos",
-										"description": "Muestra la lista de características de la base de datos",
-										"rowId": `${prefix}databasemenu`
-										},
-										{
-											"title": "Menú de cambiador de voz",
-										"description": "Muestra la lista de funciones de cambio de voz",
-										"rowId": `${prefix}voicemenu`
-										}
-								]
-							},
-							{
-								"title": "Chatear con otros usuarios",
-								"rows": [
+									},
 									{
-										"title": "Menú de chat anónimo",
-										"description": "Muestra la lista de funciones de chat anónimo",
-										"rowId": `${prefix}anonymouschatmenu`
-									}
-								]
-							},
-							{
-								"title": "sistema de grupo",
-								"rows": [
-									{
-										"title": "Menu del sistema",
-										"description": "Muestra la lista de características del sistema de grupo",
-										"rowId": `${prefix}sistemmenu`
-									}
-								]
-							},
-							{
-								"title": "Owner",
-								"rows": [
-									{
-										"title": "Menú de propietario",
-										"description": "Muestra la lista de características del propietario",
-										"rowId": `${prefix}ownermenu`
-									}
-								]
-							},
-							{
-								"title": "Creditos",
-								"rows": [
-									{
-										"title": "Gracias a",
-										"description": "¡¡Muestra la lista de crédito del Bot!!",
-										"rowId": `${prefix}tqtt`
-									}
+										"title": "horoscopo",
+										"description": "El nombre lo dice todo",
+										"rowId": `${prefix}horoscopemenukcodk`
+									},
 								]
 							}
 						],
@@ -2945,7 +2995,7 @@ case 'convertmenu': {
 break
 case 'nocategorymenu': {
 	anu = `
-	*Menú misceláneo*
+	*Menú*
   
   ➙ ${prefix}ping
   ➙ ${prefix}owner
@@ -3157,7 +3207,7 @@ break
   ➙ ${prefix}play [query]
   ➙ ${prefix}yts [query]
   ➙ ${prefix}google [query]
-  ➙ ${prefix}gimage [query]
+  ➙ ${prefix}imagen [query]
   ➙ ${prefix}pinterest [query]
   ➙ ${prefix}wallpaper [query]
   ➙ ${prefix}wikimedia [query]
