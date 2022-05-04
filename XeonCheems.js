@@ -432,7 +432,7 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    let g = /tijera/i
 	    let b = /piedra/i
 	    let k = /papel/i
-	    let reg = /^(scissors|rock|paper)/i
+	    let reg = /^(tijera|piedra|papel)/i
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
