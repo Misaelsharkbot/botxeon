@@ -41,7 +41,7 @@ global.mess = {
     group: 'Este comando solo se puede usar en gurpos!',
     private: 'Este comando solo se utiliza en chat privado!',
     bot: 'Este comando solo puede ser utilizado por el bot',
-    wait: 'In process...',
+    wait: 'En proceso...',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
 }
 global.limitawal = {
