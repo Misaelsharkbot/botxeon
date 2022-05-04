@@ -243,7 +243,7 @@ if (budy.includes('https://chat.whatsapp.com/')) {
             }
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
             let caption = `
-Answer the following questions :\n${room.soal}\n\n\nThere is ${room.jawaban.length} Answer ${room.jawaban.find(v => v.includes(' ')) ? `(some answers have spaces)` : ''}
+Responde las siguientes preguntas :\n${room.soal}\n\n\nThere is ${room.jawaban.length} Answer ${room.jawaban.find(v => v.includes(' ')) ? `(some answers have spaces)` : ''}
 ${isWin ? `All Answers Answered` : isSurender ? 'Give up!' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
@@ -266,7 +266,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await reply(`🎮 Math Quiz  🎮\n\nCorrect answer 🎉\n\nWant to play again? Send ${prefix}math mode`)
+                await reply(`🎮 Cuestionario de Matemáticas  🎮\n\nrespuesta correcta 🎉\n\n¿Quieres volver a jugar? Enviar ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
             } else reply('*Wrong Answer!*')
         }
@@ -382,7 +382,7 @@ ${isWin ? `@${winner.split('@')[0]} Win!` : isTie ? `Game over` : `Turn ${['❌'
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
-Type *give up* to surrender and admit defeat`
+Escrive *give up* rendirse y admitir la derrota`
 	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
 	    if (room.x !== room.o) await XeonBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
@@ -398,9 +398,9 @@ Type *give up* to surrender and admit defeat`
 	    if (roof) {
 	    let win = ''
 	    let tie = false
-	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|sure|oke?|reject|dont|later|yes|can|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
-	    if (/^(reject|dont|later|n|no|can)/i.test(m.text)) {
-	    XeonBotInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} reject the suit, the suit is canceled`, m)
+	    if (m.sender == roof.p2 && /^(aceptar(ept)?|accept|sure|oke?|reject|dont|later|yes|can|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
+	    if (/^(rechasar|dont|later|n|no|can)/i.test(m.text)) {
+	    XeonBotInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rechazar el PVP, el pvp se cancela`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -415,13 +415,13 @@ Type *give up* to surrender and admit defeat`
 
 Por favor elige una opcion en el chat respectivo"
 click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) XeonBotInc.sendText(roof.p, `Please select \n\nPiedra🗿\nPapel📄\nTijera✂️`, m)
-	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, `Please select \n\nPiedra🗿\nPapel📄\nTijera✂️`, m)
+	    if (!roof.pilih) XeonBotInc.sendText(roof.p, `Por favor selecciona \n\nPiedra🗿\nPapel📄\nTijera✂️`, m)
+	    if (!roof.pilih2) XeonBotInc.sendText(roof.p2, `Por favor selecciona \n\nPiedra🗿\nPapel📄\nTijera✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
 	    if (!roof.pilih && !roof.pilih2) XeonBotInc.sendText(m.chat, `Ambos jugadores no quieren jugar,\nJuego cancelado`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    XeonBotInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} didn't choose suit, game over`, m)
+	    XeonBotInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} no elegíste una opcion, juego terminado`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -482,7 +482,7 @@ Its been ${clockString(new Date - afkTime)}
         if (db.users[m.sender].afkTime > -1) {
             let user = global.db.users[m.sender]
             reply(`
-You came back online from AFK${user.afkReason ? ' after ' + user.afkReason : ''}
+Volviste a estar en línea desde AFK${user.afkReason ? ' después ' + user.afkReason : ''}
 In ${clockString(new Date - user.afkTime)}
 `.trim())
             user.afkTime = -1
@@ -500,7 +500,7 @@ In ${clockString(new Date - user.afkTime)}
         case 'ttc': case 'ttt': case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
-            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game'
+            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'todavía estás en el juego'
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
             reply('Partner found!')
@@ -522,7 +522,7 @@ In ${clockString(new Date - user.afkTime)}
             9: '9️⃣',
             }[v]
             })
-            let str = `Room ID: ${room.id}
+            let str = `ID: ${room.id}
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
@@ -530,7 +530,7 @@ ${arr.slice(6).join('')}
 
 Waiting @${room.game.currentTurn.split('@')[0]}
 
-Type *give up* to surrender and admit defeat`
+Escribe *give up* rendirse y admitir la derrota`
             if (room.x !== room.o) await XeonBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
             await XeonBotInc.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
@@ -554,7 +554,7 @@ Type *give up* to surrender and admit defeat`
             delete this.game
             XeonBotInc.sendText(m.chat, `Successfully delete the TicTacToe session`, m)
             } else if (!this.game) {
-            reply(`TicTacToe Session🎮 there is not any`)
+            reply(`Sesión de TicTacToe🎮 no hay ninguna`)
             } else throw '?'
             } catch (e) {
             reply('error')
@@ -573,9 +573,9 @@ Type *give up* to surrender and admit defeat`
             let id = 'suit_' + new Date() * 1
             let caption = `_*SUIT PvP*_
 
-@${m.sender.split`@`[0]} challenging @${m.mentionedJid[0].split`@`[0]} to play suit
+@${m.sender.split`@`[0]} challenging @${m.mentionedJid[0].split`@`[0]} jugar 
 
-Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
+por favor @${m.mentionedJid[0].split`@`[0]} escribir accept/reject`
             this.suit[id] = {
             chat: await XeonBotInc.sendText(m.chat, caption, m, { mentions: parseMention(caption) }),
             id: id,
@@ -748,7 +748,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
                 }
             }
             break
-            case 'mysoulmate': {
+            case 'pareja': {
             if (!m.isGroup) throw mess.group
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -944,7 +944,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
 *${prefix}deletevote* - to delete votes`
 let buttonsVote = [
   {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Voto a favor👍🏻'}, type: 1},
-  {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto en contra👎🏻'}, type: 1}
+  {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto encontra👎🏻'}, type: 1}
 ]
 
             let buttonMessageVote = {
@@ -958,34 +958,34 @@ let buttonsVote = [
             break
                case 'upvote': {
             if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*no voting in this group!*_\n\n*Type ${prefix}vote* - to start voting`
+            if (!(m.chat in vote)) throw `_*no se vota en este grupo!*_\n\n*Esribe ${prefix}vote* - para empezar a votar`
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) throw 'You have Voted'
+            if (wasVote) throw 'has votado'
             vote[m.chat][1].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `*「 VOTE 」*
 
-*Reason:* ${vote[m.chat][0]}
+*Motivo:* ${vote[m.chat][0]}
 
-┌〔 UPVOTE 〕
+┌〔 A FAVOR 〕
  
 ├ Total: ${vote[m.chat][1].length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
  
 └────
 
-┌〔 DEVOTE 〕
+┌〔 ENCONTRA 〕
  
 ├ Total: ${vote[m.chat][2].length}
 ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
  
 └────
 
-*${prefix}hapusvote* - to delete votes`
+*${prefix}hapusvote* - para borrar votos`
             let buttonsUpvote = [
               {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Voto a favor👍🏻'}, type: 1},
-              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto en contra👎🏻'}, type: 1}
+              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto encontra👎🏻'}, type: 1}
             ]
 
             let buttonMessageUpvote = {
@@ -1008,26 +1008,26 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `*「 VOTE 」*
 
-*Reason:* ${vote[m.chat][0]}
+*Motivo:* ${vote[m.chat][0]}
 
-┌〔 UPVOTE 〕
+┌〔 A FAVOR 〕
  
 ├ Total: ${vote[m.chat][1].length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
  
 └────
 
-┌〔 DEVOTE 〕
+┌〔 ENCONTRA 〕
  
 ├ Total: ${vote[m.chat][2].length}
 ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
  
 └────
 
-*${prefix}hapusvote* - to delete votes`
+*${prefix}hapusvote* - para borrar votos`
             let buttonsDevote = [
               {buttonId: `${prefix}upvote`, buttonText: {displayText: '👍🏻Voto a favor👍🏻'}, type: 1},
-              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto en contra👎🏻'}, type: 1}
+              {buttonId: `${prefix}devote`, buttonText: {displayText: '👎🏻voto encontra👎🏻'}, type: 1}
             ]
 
             let buttonMessageDevote = {
@@ -1046,23 +1046,23 @@ if (!m.isGroup) throw mess.group
 if (!(m.chat in vote)) throw `_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`
 teks_vote = `*「 VOTE 」*
 
-*Reason:* ${vote[m.chat][0]}
+*Motivo:* ${vote[m.chat][0]}
 
-┌〔 UPVOTE 〕
+┌〔 A FAVOR 〕
  
 ├ Total: ${upvote.length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
  
 └────
 
-┌〔 DEVOTE 〕
+┌〔 ENCONTRA 〕
  
 ├ Total: ${devote.length}
 ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
  
 └────
 
-*${prefix}hapusvote* - to delete votes
+*${prefix}hapusvote* - para borrar votos
 
 
 ©${XeonBotInc.user.id}
@@ -1071,9 +1071,9 @@ XeonBotInc.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) throw mess.group
-            if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - to start voting`
+            if (!(m.chat in vote)) throw `_*no se vota en este grupo!*_\n\n*${prefix}vote* - para empezar a votar`
             delete vote[m.chat]
-            reply('Successfully Deleted Vote Session In This Group')
+            reply('Sesión de votación eliminada con éxito en este grupo')
 	    }
             break
                case 'group': case 'grupo': {
@@ -1289,7 +1289,7 @@ case 'antilink':
 	    break
             case 'listpc': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `⬣ *PERSONAL CHAT LIST*\n\nTotal Chat : ${anu.length} Chat\n\n`
+                 let teks = `⬣ *LISTA DE CHATS PERSONALES*\n\nTotal Chat : ${anu.length} Chat\n\n`
                  for (let i of anu) {
                      let nama = store.messages[i].array[0].pushName
                      teks += `⬡ *Name :* ${nama}\n⬡ *User :* @${i.split('@')[0]}\n⬡ *Chat :* https://wa.me/${i.split('@')[0]}\n\n────────────────────────\n\n`
@@ -1299,10 +1299,10 @@ case 'antilink':
              break
                 case 'listgc': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `⬣ *GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
+                 let teks = `⬣ *LISTA DE CHAT DE GRUPOT*\n\nTotal Group : ${anu.length} Grupos\n\n`
                  for (let i of anu) {
                      let metadata = await XeonBotInc.groupMetadata(i)
-                     teks += `⬡ *Name :* ${metadata.subject}\n⬡ *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Made :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                     teks += `⬡ *Nombre :* ${metadata.subject}\n⬡ *Owner :* @${metadata.owner.split('@')[0]}\n⬡ *ID :* ${metadata.id}\n⬡ *Hecho :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
                  XeonBotInc.sendTextWithMentions(m.chat, teks, m)
              }
@@ -1321,17 +1321,17 @@ case 'antilink':
                 let encmedia = await XeonBotInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
-                if ((quoted.msg || quoted).seconds > 11) return reply('Maximum 10 seconds!')
+                if ((quoted.msg || quoted).seconds > 11) return reply('Máximo 10 segundos!')
                 let media = await quoted.download()
                 let encmedia = await XeonBotInc.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else {
-                throw `Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`
+                throw `Enviar imagen/video con el comando ${prefix + command}\nVideo Duración 1-9 segundos`
                 }
             }
             break
             case 'ebinary': {
-            if (!m.quoted.text && !text) throw `Send/reply text with caption ${prefix + command}`
+            if (!m.quoted.text && !text) throw `Enviar/responder texto con el comando ${prefix + command}`
             let { eBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let eb = await eBinary(teks)
@@ -1347,7 +1347,7 @@ case 'antilink':
         }
         break
             case 'emojimix': {
-	        if (!text) throw `Example : ${prefix + command} 😅+🤔`
+	        if (!text) throw `Ejemplo : ${prefix + command} 😅+🤔`
 		let [emoji1, emoji2] = text.split`+`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 		for (let res of anu.results) {
@@ -1356,9 +1356,9 @@ case 'antilink':
 		}
 	    }
 	    break
-            case 'toimage': case 'toimg': {
-                if (!quoted) throw 'Reply Image'
-                if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
+            case 'toimg': case 'img': {
+                if (!quoted) throw 'Imagen de respuesta'
+                if (!/webp/.test(mime)) throw `sticker de respuesta con el comando *${prefix + command}*`
                 replay(mess.wait)
                 let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
@@ -1373,7 +1373,7 @@ case 'antilink':
             break
 	        case 'tomp4': case 'tovideo': {
                 if (!quoted) throw 'Reply Image'
-                if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
+                if (!/webp/.test(mime)) throw `sticker de respuesta con el comando *${prefix + command}*`
                 replay(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
@@ -1489,7 +1489,7 @@ case 'antilink':
                 })
                 }
                 break
-        case 'gimage': case 'googleimage': {
+        case 'gimage': case 'imagen': {
         if (!text) throw `Example : ${prefix + command} ml nana`
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -1500,7 +1500,7 @@ case 'antilink':
                 ]
                 let buttonMessage = {
                     image: { url: images },
-                    caption: `*-------「 GIMAGE SEARCH 」-------*
+                    caption: `*-------「 BÚSQUEDA DE IMÁGENES 」-------*
 🤠 *Query* : ${text}
 🔗 *Media Url* : ${images}`,
                     footer: XeonBotInc.user.name,
@@ -1517,15 +1517,15 @@ case 'antilink':
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                     ngen = `
-⭔ Title : ${anu.title}
+⭔ Titulo : ${anu.title}
 ⭔ Ext : Search
 ⭔ ID : ${anu.videoId}
-⭔ Duration : ${anu.timestamp}
-⭔ Viewers : ${anu.views}
-⭔ Uploaded : ${anu.ago}
-⭔ Author : ${anu.author.name}
-⭔ Channel : ${anu.author.url}
-⭔ Description : ${anu.description}
+⭔ Duracion : ${anu.timestamp}
+⭔ Vistas : ${anu.views}
+⭔ Subido : ${anu.ago}
+⭔ Autor : ${anu.author.name}
+⭔ Canal : ${anu.author.url}
+⭔ Descripción : ${anu.description}
 `
 message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   XeonBotInc.waUploadToServer })
                 template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -1536,7 +1536,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                             hydratedFooterText: `Playing To ${text}`,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: '🥬Video Source Link🥬',
+                                    displayText: '🎞URL del video🎞',
                                     url: `${anu.url}`
                                 }
                             }, {
@@ -1567,7 +1567,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
             break
             case 'ytmp4': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
+                if (!text) throw `Ejemplo : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('Video size is too big '+util.format(media))
@@ -1628,7 +1628,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 ]
                 let buttonMessage = {
                     image: { url: 'https://coffee.alexflipnote.dev/random' },
-                    caption: `☕Random Coffee☕`,
+                    caption: `☕Café☕`,
                     footer: XeonBotInc.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1791,7 +1791,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 replay(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '💁🏻‍♂️With Watermark🤔'}, type: 1},
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '💁🏻‍♂️con marca de agua🤔'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
                 ]
                 let buttonMessage = {
@@ -1827,8 +1827,8 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 replay(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '💁🏻‍♂️No Watermark💁🏻‍♂️'}, type: 1},
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '👀With Watermark👀'}, type: 1}
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '💁🏻‍♂️Sin marca de agua💁🏻‍♂️'}, type: 1},
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '👀Con marca de agua👀'}, type: 1}
                 ]
                 let buttonMessage = {
                     text: `Download From ${text}`,
@@ -2166,7 +2166,7 @@ View list of message with ${prefix}listmsg`)
             }
 	    break
 	    case 'anonymous': {
-                if (m.isGroup) return reply('This Features Cannot Be Use in Group!')
+                if (m.isGroup) return reply('¡Estas funcion no se pueden usar en grupo!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [{
                                 urlButton: {
@@ -2179,7 +2179,7 @@ View list of message with ${prefix}listmsg`)
                                     id: 'start'
                                 }
                             }]
-                XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} Welcome To Anonymous Chat\n\nClick The Button Below To Find A Partner\`\`\``, XeonBotInc.user.name, m)
+                XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} Bienvenido al chat anónimo\n\nHaga clic en el botón de abajo para encontrar un socio\`\`\``, XeonBotInc.user.name, m)
             }
 			break
 case 'sendkontak': case 'sendcontact': {
@@ -2190,12 +2190,12 @@ case 'sendkontak': case 'sendcontact': {
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `_You Are Not In Anonymous Session, Press The Button To Find A Partner_`)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `_No está en una sesión anónima, presione el botón para encontrar a otra persona_`)
                     throw false
                 }
                 let profile = await XeonBotInc.profilePictureUrl(room.b)
                 let status = await XeonBotInc.fetchStatus(room.b)
-                let msg = await XeonBotInc.sendImage(room.a, profile, `Name : ${await XeonBotInc.getName(room.b)}\nBio : ${status.status}\nUser : @${room.b.split("@")[0]}`, m, { mentions: [room.b] })
+                let msg = await XeonBotInc.sendImage(room.a, profile, `Nombre : ${await XeonBotInc.getName(room.b)}\nBio : ${status.status}\nUser : @${room.b.split("@")[0]}`, m, { mentions: [room.b] })
                 XeonBotInc.sendContact(room.a, [room.b.split("@")[0]], msg)
             }
             break
@@ -2207,23 +2207,23 @@ case 'sendkontak': case 'sendcontact': {
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `_You Are Not In Anonymous Session, Press The Button To Find A Partner_`)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `_No está en una sesión anónima, presione el botón para encontrar a una persona_`)
                     throw false
                 }
                 reply('Ok')
                 let other = room.other(m.sender)
-                if (other) await XeonBotInc.sendText(other, `_Partner Has Left Anonymous Session_`, m)
+                if (other) await XeonBotInc.sendText(other, `_La otra persona ha dejado sesión anónima_`, m)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
             case 'mulai': case 'start': {
-                if (m.isGroup) return reply('This Features Cannot Be Use in Group!')
+                if (m.isGroup) return reply('¡Estas funciones no se pueden usar en grupo!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
                     let buttons = [
                         { buttonId: 'stop', buttonText: { displayText: '😏Stop😏' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `_You Are Still In Anonymous Session, Press The Button Below To Terminate Your Anonymous Session_`, XeonBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `_Todavía está en sesión anónima, presione el botón a continuación para finalizar su sesión anónima_`, XeonBotInc.user.name, m)
                     throw false
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
@@ -2232,10 +2232,10 @@ case 'sendkontak': case 'sendcontact': {
                         { buttonId: 'next', buttonText: { displayText: '🍃Skip🍃' }, type: 1 },
                         { buttonId: 'stop', buttonText: { displayText: '😏Stop😏' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(room.a, buttons, `_Successfully Found Partner, Now You Can Send Messages_`, XeonBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(room.a, buttons, `_Socio encontrado con éxito, ahora puede enviar mensajes_`, XeonBotInc.user.name, m)
                     room.b = m.sender
                     room.state = 'CHATTING'
-                    await XeonBotInc.sendButtonText(room.b, buttons, `_Successfully Found Partner, Now You Can Send Messages_`, XeonBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(room.b, buttons, `_Socio encontrado con éxito, ahora puede enviar mensajes_`, XeonBotInc.user.name, m)
                 } else {
                     let id = + new Date
                     this.anonymous[id] = {
@@ -2253,7 +2253,7 @@ case 'sendkontak': case 'sendcontact': {
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '😏Stop😏' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `_Please Wait, Looking For A Partner_`, XeonBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `_Por favor espere, buscando una pareja_`, XeonBotInc.user.name, m)
                 }
                 break
             }
@@ -2265,7 +2265,7 @@ case 'sendkontak': case 'sendcontact': {
                     let buttons = [
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In Anonymous Session, Press The Button To Find A Partner\`\`\``)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`No está en una sesión anónima, presione el botón para encontrar un socio\`\`\``)
                     throw false
                 }
                 let other = romeo.other(m.sender)
@@ -2298,7 +2298,7 @@ case 'sendkontak': case 'sendcontact': {
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '😏Stop😏' }, type: 1 }
                     ]
-                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Please wait, looking for a partner\`\`\``, XeonBotInc.user.name, m)
+                    await XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Por favor espere, buscando un socio\`\`\``, XeonBotInc.user.name, m)
                 }
                 break
             }
@@ -2746,7 +2746,7 @@ case 'funmenu': {
 	*Menú divertido*
   
   ➙ ${prefix}couple
-  ➙ ${prefix}mysoulmate
+  ➙ ${prefix}pareja
   ➙ ${prefix}math [mode] 
   `
   const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3169,7 +3169,7 @@ break
   
   ꪶ🐕Menú divertido🐕ꫂ
   ➙ ${prefix}couple
-  ➙ ${prefix}mysoulmate
+  ➙ ${prefix}pareja
   ➙ ${prefix}math [mode]  
   
   ꪶ🐕Menú de cambiador de voz🐕ꫂ
